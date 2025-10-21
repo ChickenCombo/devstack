@@ -2,6 +2,7 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "@devstack/db";
 import * as schema from "@devstack/db/schema/auth";
+import { admin } from "better-auth/plugins";
 
 export const auth: ReturnType<typeof betterAuth> = betterAuth({
   database: drizzleAdapter(db, {
@@ -29,4 +30,17 @@ export const auth: ReturnType<typeof betterAuth> = betterAuth({
       httpOnly: true,
     },
   },
+  user: {
+    additionalFields: {
+      role: {
+        type: "string",
+        input: false,
+      },
+    },
+  },
+  plugins: [
+    admin({
+      adminRoles: ["admin", "superadmin"],
+    }),
+  ],
 });
