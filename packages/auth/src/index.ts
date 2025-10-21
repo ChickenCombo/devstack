@@ -20,6 +20,9 @@ export const auth: ReturnType<typeof betterAuth> = betterAuth({
     },
   },
   advanced: {
+    database: {
+      generateId: false,
+    },
     defaultCookieAttributes: {
       sameSite: "none",
       secure: true,
