@@ -1,57 +1,78 @@
-# devstack
+# ✨ DevStack
 
-This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines Next.js, Hono, TRPC, and more.
+An opinionated full-stack monorepo setup built with my preferred technologies — designed for speed, scalability, and developer experience, bootstrapped with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack).
 
-## Features
+## 🚀 Features
+
+### 🌐 Frontend
+
+- **Next.js** - React framework for hybrid rendering
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - Reusable UI components
+- **TanStack Query** - Powerful asynchronous state management for React
+- **Better Auth (client-side)** - The most comprehensive authentication framework for TypeScript
+
+### 💻 Backend
+
+- **Hono** - Ultrafast web framework
+- **tRPC** - End-to-end type-safe APIs
+- **Drizzle** - TypeScript-first ORM
+- **PostgreSQL** - Advanced SQL database
+- **Better Auth (server-side)** - The most comprehensive authentication framework for TypeScript
+
+### 🛠️ Tooling
 
 - **TypeScript** - For type safety and improved developer experience
-- **Next.js** - Full-stack React framework
-- **TailwindCSS** - Utility-first CSS for rapid UI development
-- **shadcn/ui** - Reusable UI components
-- **Hono** - Lightweight, performant server framework
-- **tRPC** - End-to-end type-safe APIs
-- **Bun** - Runtime environment
-- **Drizzle** - TypeScript-first ORM
-- **PostgreSQL** - Database engine
-- **Authentication** - Better-Auth
-- **Turborepo** - Optimized monorepo build system
+- **Bun** - Fast JavaScript runtime & toolkit
+- **Turborepo** - High-performance build system
+- **Docker** - Containerization for consistent environments
 
-## Getting Started
+## 🏁 Getting Started
 
-First, install the dependencies:
+1. Clone the repository:
+
+```bash
+git clone https://github.com/ChickenCombo/devstack.git
+```
+
+2. Navigate into the project directory:
+
+```bash
+cd devstack
+```
+
+3. Install dependencies:
 
 ```bash
 bun install
 ```
-## Database Setup
+
+## ⚙️ Project Setup
 
 This project uses PostgreSQL with Drizzle ORM.
 
-1. Make sure you have a PostgreSQL database set up.
-2. Update your `apps/server/.env` file with your PostgreSQL connection details.
+1. Update your `apps/server/.env` and `apps/web/.env` files with your own environment configuration
 
-3. Apply the schema to your database:
+> [!TIP]  
+> You can use `apps/server/.env.example` and `apps/web/.env.example` as a template for your own `.env` files.
+
+2. Apply the schema to your database:
+
 ```bash
 bun db:push
 ```
 
-
-Then, run the development server:
+3. Run the development server:
 
 ```bash
 bun dev
 ```
 
-Open [http://localhost:3001](http://localhost:3001) in your browser to see the web application.
-The API is running at [http://localhost:3000](http://localhost:3000).
+> [!NOTE]
+> Web URL: [http://localhost:3001](http://localhost:3001)  
+> API URL: [http://localhost:3000](http://localhost:3000)
 
-
-
-
-
-
-
-## Project Structure
+## 📂 Project Structure
 
 ```
 devstack/
@@ -64,7 +85,7 @@ devstack/
 │   └── db/          # Database schema & queries
 ```
 
-## Available Scripts
+## 📜 Available Scripts
 
 - `bun dev`: Start all applications in development mode
 - `bun build`: Build all applications
