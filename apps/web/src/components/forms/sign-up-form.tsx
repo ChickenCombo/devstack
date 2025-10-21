@@ -23,6 +23,7 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { PasswordInput } from "../password-input";
 import * as z from "zod";
+import { useRouter } from "next/navigation";
 
 const signUpFormSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -43,6 +44,8 @@ export function SignUpForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  const router = useRouter();
+
   const form = useForm({
     defaultValues: {
       name: "",
@@ -58,6 +61,7 @@ export function SignUpForm({
         },
         {
           onSuccess: () => {
+            router.push("/login");
             toast.success("Successfully signed up");
           },
           onError: (ctx) => {

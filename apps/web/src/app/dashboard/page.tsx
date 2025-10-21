@@ -1,3 +1,4 @@
+import { SignOutButton } from "@/components/sign-out-button";
 import { authClient } from "@/lib/auth-client";
 import { headers } from "next/headers";
 
@@ -13,5 +14,10 @@ export default async function DashboardPage() {
     return <div>You are not logged in</div>;
   }
 
-  return <div>You are logged in</div>;
+  return (
+    <div>
+      <p>You are logged in</p>
+      <SignOutButton />
+    </div>
+  );
 }
